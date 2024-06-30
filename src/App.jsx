@@ -21,11 +21,15 @@ const App = () => {
     JSON.parse(localStorage.getItem("user")) || null
   );
   useEffect(() => {
-    userdata?.Email &&
-      setCartItem(
-        JSON.parse(localStorage.getItem(`cartItem${userdata?.Email}`))
-      );
-  }, []);
+    if (userdata?.Email) {
+      const userCart =
+        JSON.parse(localStorage.getItem(`cartItem${userdata.Email}`)) || [];
+      setCartItem(userCart);
+    } else {
+      const guestCart = JSON.parse(localStorage.getItem("cartItem")) || [];
+      setCartItem(guestCart);
+    }
+  }, [userdata,cartItem]);
   const routes = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Rootlayout />} errorElement={<Errorpage />}>
@@ -33,7 +37,7 @@ const App = () => {
         <Route path="/search/:id" element={<SearchPage />} />
         <Route path="/login" element={<Login btnName="Login" />} />
         <Route path="/register" element={<Login btnName="Register" />} />
-        <Route path="/cart" element={<Cart/>} />
+        <Route path="/cart" element={<Cart />} />
       </Route>
     )
   );

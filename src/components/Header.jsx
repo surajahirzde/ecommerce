@@ -10,7 +10,7 @@ import { GlobalData } from "../helper/GlobalData";
 
 const Header = () => {
   const { userdata, cartItem } = useContext(GlobalData);
-  const [cartCount, setCartCount] = useState(0);
+  const [cartCount, setCartCount] = useState(cartItem.length || 0);
   const [activeNav, setActiveNav] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ const Header = () => {
   };
   useEffect(() => {
     setCartCount(cartItem.length);
-  }, [cartItem.length]);
+  }, [cartItem]);
   return (
     <header className={activeNav ? "active" : ""}>
       <nav className="parent">
