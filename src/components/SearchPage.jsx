@@ -12,11 +12,18 @@ const SearchPage = () => {
 
   const fetchData = () => {
     setLoading(true);
+    const key = [
+        "32cf5737e2msh7b20ac2ddd36c99p1c4c91jsnc099cd7dcb1a",
+        "b11835b5bdmsha015712e30472dfp18d9b9jsn8eaae440785f",
+      ];
+   
+   
+   
     const url = `https://real-time-amazon-data.p.rapidapi.com/search?query=${id}&page=1&country=IN&sort_by=RELEVANCE&product_condition=ALL`;
     const options = {
       method: "GET",
       headers: {
-        "x-rapidapi-key": "32cf5737e2msh7b20ac2ddd36c99p1c4c91jsnc099cd7dcb1a",
+        "x-rapidapi-key": key[Math.floor(Math.random() * key.length)],
         "x-rapidapi-host": "real-time-amazon-data.p.rapidapi.com",
       },
     };
