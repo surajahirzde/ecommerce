@@ -1,0 +1,65 @@
+.searchPage {
+  padding: 1rem;
+}
+.searchPage .productContainer {
+  display: grid;
+  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.searchPage .productContainer .product {
+  width: 100%;
+  padding: 0;
+  position: relative;
+}
+.searchPage .productContainer .product .shareBtn{
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.4rem;
+  color: blue;
+  z-index: 1;
+}
+.searchPage .productContainer .product .imageContainer {
+  width: 100%;
+  height: 200px;
+}
+.searchPage .productContainer .product .imageContainer img {
+  object-fit: contain;
+}
+.searchPage .productContainer .product .productInfo {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.searchPage .productContainer .product .productInfo h2 {
+  font-size: 0.9em;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.searchPage .productContainer .product .productInfo p {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.searchPage .productContainer .product .productInfo button {
+  width: 80%;
+  margin: auto;
+  margin-top: 1rem;
+  padding: 0.5rem 0;
+  background-color: #007bd8;
+  color: var(--bgColor);
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.searchPage .productContainer .product .productInfo button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+.searchPage .loader {
+  text-align: center;
+}

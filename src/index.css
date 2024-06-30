@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --bgColor: #f1f2f4;
+  --fontColor: #050505;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bgColor);
+  color: var(--fontColor);
+  min-height: 100vh;
+}
+
+input,
+textarea,
+button {
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+.top {
+  margin-top:70px;
+}

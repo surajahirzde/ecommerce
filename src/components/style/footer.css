@@ -1,0 +1,43 @@
+.footer {
+  background-color: var(--fontColo, #212121);
+  padding: 1rem;
+  color: var(--bgColor);
+}
+.footer .footerLink {
+  max-width: 1400px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.footer .footerLink p {
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+  opacity: 0.5;
+}
+.footer .footerLink ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  list-style: none;
+}
+.footer .footerLink ul li a {
+  color: var(--bgColor);
+  text-decoration: none;
+  font-size: 0.8em;
+}
+.footer .addressInfo address {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.footer .addressInfo address span {
+  display: flex;
+  gap: 1rem;
+}
+.footer .addressInfo address span a{
+    color: var(--bgColor);
+    font-size: 0.8em;
+    text-decoration: none;
+}

@@ -1,0 +1,75 @@
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider-track .imageContainer {
+  min-width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.slider-track .imageContainer img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.leftIcon,
+.rightIcon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 10px;
+  width: 30px;
+  background-color: #fff;
+  color: var(--fontColor);
+  z-index: 1;
+}
+
+.leftIcon {
+  left: 0px;
+  border-radius: 0 0.3rem 0.3rem 0;
+}
+
+.rightIcon {
+  right: 0px;
+  border-radius: 0.3rem 0 0 0.3rem;
+}
+.dotted {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.3rem 0.5rem;
+  border-radius: 10px;
+}
+.dotted span {
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+.dotted span.active {
+  width: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .slider-track {
+    height: 130px;
+  }
+}
